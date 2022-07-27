@@ -10,6 +10,8 @@ let numeroAnterior;
 let numeroAtual;
 let sinalSelecionado;
 
+
+//insere numero na tela
 const inserir = (evento) => {
     if(numeroNovo){
         visor.innerHTML = evento.target.textContent;
@@ -19,6 +21,7 @@ const inserir = (evento) => {
     };
 };
 
+//captura operador para realizar calculo
 const inserirSinal = (evento) => {
     if(!numeroNovo){
         calcular();
@@ -29,6 +32,7 @@ const inserirSinal = (evento) => {
     };
 };
 
+//realiza operação baseado no operador selecionado
 const calcular = () => {
     numeroAtual = visor.textContent;
     if(sinalSelecionado=='+'){
@@ -42,11 +46,13 @@ const calcular = () => {
     };
 };
 
+//gera resultado após realiza operação anterior
 const resultado = () => { 
     calcular();
     sinalSelecionado = undefined;
 }
 
+//reliza limpeza em todos parametros de calculos e visor
 const clear = () => {
     numeroAnterior = 0;
     numeroAtual = 0;
